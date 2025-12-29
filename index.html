@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>AS Transport | Exelência em Transporte</title>
+  <title>AS Transport</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonte -->
@@ -21,6 +21,10 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -144,13 +148,15 @@
       transform: translateY(-5px);
     }
 
-    .card h3 {
-      margin-bottom: 15px;
-    }
-
     .card p {
       color: var(--cinza);
       font-size: 15px;
+    }
+
+    /* ================= CONTATO ================= */
+    .contato p {
+      color: var(--cinza);
+      font-size: 16px;
     }
 
     /* ================= FOOTER ================= */
@@ -163,9 +169,32 @@
       font-size: 14px;
     }
 
+    /* ================= WHATSAPP ================= */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      z-index: 2000;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
     /* ================= RESPONSIVO ================= */
     @media (max-width: 768px) {
-
       header {
         padding: 20px;
       }
@@ -204,10 +233,6 @@
         text-align: center;
       }
 
-      .hero-text h1 {
-        font-size: 36px;
-      }
-
       section {
         padding: 60px 20px;
       }
@@ -217,23 +242,13 @@
         text-align: center;
       }
 
-      .sobre p {
+      .sobre p,
+      .contato p {
         text-align: center;
-        font-size: 15px;
       }
 
       .servicos {
         grid-template-columns: 1fr;
-      }
-
-      footer {
-        padding: 30px 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-text h1 {
-        font-size: 30px;
       }
     }
   </style>
@@ -243,59 +258,58 @@
   <!-- HEADER -->
   <header>
     <img src="Logo.png" alt="AS Transport">
-
     <div class="menu-toggle" id="menuToggle">☰</div>
 
     <nav id="menu">
-      <a href="#">Início</a>
-      <a href="#">Sobre</a>
-      <a href="#">Serviços</a>
-      <a href="#">Contato</a>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="inicio">
     <div class="hero-text">
       <h1>Excelência em <span>Transporte</span></h1>
-      <p>
-        Soluções profissionais em transporte corporativo, com segurança,
-        pontualidade e alto padrão de atendimento.
-      </p>
-      <a href="#" class="btn">Solicitar Atendimento</a>
+      <p>Transporte corporativo com segurança, pontualidade e alto padrão.</p>
+      <a href="#contato" class="btn">Fale Conosco</a>
     </div>
   </section>
 
   <!-- SOBRE -->
-  <section class="sobre">
+  <section class="sobre" id="sobre">
     <h2 class="section-title">Sobre a <span>AS Transport</span></h2>
     <p>
-      A AS Transport atua no segmento de transporte executivo e corporativo,
-      oferecendo serviços personalizados, veículos modernos e uma equipe
-      altamente qualificada, garantindo conforto, segurança e eficiência.
+      Atuamos no transporte executivo e corporativo, oferecendo soluções
+      personalizadas, frota moderna e profissionais qualificados.
     </p>
   </section>
 
   <!-- SERVIÇOS -->
-  <section>
+  <section id="servicos">
     <h2 class="section-title">Nossos <span>Serviços</span></h2>
 
     <div class="servicos">
       <div class="card">
         <h3>Transporte Executivo</h3>
-        <p>Atendimento premium para empresas e clientes exigentes.</p>
+        <p>Atendimento premium para empresas.</p>
       </div>
-
       <div class="card">
         <h3>Eventos Corporativos</h3>
-        <p>Logística e transporte para eventos, reuniões e convenções.</p>
+        <p>Logística eficiente para eventos.</p>
       </div>
-
       <div class="card">
         <h3>Traslados</h3>
-        <p>Serviço de traslado com pontualidade e conforto.</p>
+        <p>Pontualidade e conforto.</p>
       </div>
     </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <h2 class="section-title">Entre em <span>Contato</span></h2>
+    <p>Clique no botão do WhatsApp e fale conosco agora mesmo.</p>
   </section>
 
   <!-- FOOTER -->
@@ -303,7 +317,17 @@
     © 2025 AS Transport • Todos os direitos reservados
   </footer>
 
-  <!-- JS MENU MOBILE -->
+  <!-- BOTÃO WHATSAPP -->
+  <a
+    href="https://wa.me/5511983275576?text=Olá!%20Gostaria%20de%20solicitar%20um%20atendimento."
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="WhatsApp"
+  >
+    💬
+  </a>
+
+  <!-- JS MENU -->
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const menu = document.getElementById('menu');
