@@ -33,6 +33,11 @@
       overflow-x: hidden;
     }
 
+    a {
+      color: var(--branco);
+      text-decoration: none;
+    }
+
     /* ================= HEADER ================= */
     header {
       display: flex;
@@ -47,9 +52,7 @@
     }
 
     nav a {
-      color: var(--branco);
       margin-left: 30px;
-      text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
     }
@@ -62,7 +65,6 @@
       display: none;
       font-size: 32px;
       cursor: pointer;
-      color: var(--branco);
       z-index: 1100;
     }
 
@@ -98,11 +100,10 @@
     .btn {
       padding: 15px 35px;
       background-color: var(--vermelho);
-      color: var(--branco);
-      text-decoration: none;
       font-weight: 600;
       border-radius: 4px;
       transition: 0.3s;
+      display: inline-block;
     }
 
     .btn:hover {
@@ -158,7 +159,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
-      margin-top: 30px;
+      margin-bottom: 50px;
     }
 
     .info-box {
@@ -167,13 +168,25 @@
       border-left: 4px solid var(--vermelho);
     }
 
-    .info-box h3 {
-      margin-bottom: 10px;
-    }
-
     .info-box p {
       color: var(--cinza);
       font-size: 15px;
+    }
+
+    /* ================= MAPA ================= */
+    .mapa {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #1c1c1c;
+    }
+
+    .mapa iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(100%) invert(90%);
     }
 
     /* ================= FOOTER ================= */
@@ -203,7 +216,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: 0.4s ease;
+        transition: 0.4s;
         z-index: 1000;
       }
 
@@ -235,10 +248,6 @@
         text-align: center;
       }
 
-      .sobre p {
-        text-align: center;
-      }
-
       .servicos,
       .contato-info {
         grid-template-columns: 1fr;
@@ -248,113 +257,103 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="Logo.png" alt="AS Transport">
+<header>
+  <img src="Logo.png" alt="AS Transport">
+  <div class="menu-toggle" id="menuToggle">☰</div>
+  <nav id="menu">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
 
-    <div class="menu-toggle" id="menuToggle">☰</div>
+<section class="hero" id="inicio">
+  <div class="hero-text">
+    <h1>Excelência em <span>Transporte</span></h1>
+    <p>Soluções profissionais em transporte corporativo com alto padrão.</p>
+    <a
+      href="https://wa.me/5511941250440?text=Olá!%20Gostaria%20de%20solicitar%20um%20atendimento."
+      class="btn"
+      target="_blank"
+    >
+      Solicitar Atendimento
+    </a>
+  </div>
+</section>
 
-    <nav id="menu">
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+<section class="sobre" id="sobre">
+  <h2 class="section-title">Sobre a <span>AS Transport</span></h2>
+  <p>
+    Transporte executivo e corporativo com segurança, conforto e pontualidade.
+  </p>
+</section>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-text">
-      <h1>Excelência em <span>Transporte</span></h1>
-      <p>
-        Soluções profissionais em transporte corporativo, com segurança,
-        pontualidade e alto padrão de atendimento.
-      </p>
-      <a
-        href="https://wa.me/5511941250440text=Olá!%20Gostaria%20de%20solicitar%20um%20atendimento."
-        class="btn"
-        target="_blank"
-      >
-        Solicitar Atendimento
-      </a>
+<section id="servicos">
+  <h2 class="section-title">Nossos <span>Serviços</span></h2>
+  <div class="servicos">
+    <div class="card">
+      <h3>Transporte Executivo</h3>
+      <p>Atendimento premium.</p>
     </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section class="sobre" id="sobre">
-    <h2 class="section-title">Sobre a <span>AS Transport</span></h2>
-    <p>
-      A AS Transport atua no segmento de transporte executivo e corporativo,
-      oferecendo serviços personalizados, veículos modernos e uma equipe
-      altamente qualificada, garantindo conforto, segurança e eficiência.
-    </p>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section id="servicos">
-    <h2 class="section-title">Nossos <span>Serviços</span></h2>
-
-    <div class="servicos">
-      <div class="card">
-        <h3>Transporte Executivo</h3>
-        <p>Atendimento premium para empresas e clientes exigentes.</p>
-      </div>
-      <div class="card">
-        <h3>Eventos Corporativos</h3>
-        <p>Logística e transporte para eventos e convenções.</p>
-      </div>
-      <div class="card">
-        <h3>Traslados</h3>
-        <p>Pontualidade, conforto e segurança.</p>
-      </div>
+    <div class="card">
+      <h3>Eventos Corporativos</h3>
+      <p>Logística especializada.</p>
     </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contato">
-    <h2 class="section-title">Informações de <span>Contato</span></h2>
-
-    <div class="contato-info">
-      <div class="info-box">
-        <h3>📍 Endereço</h3>
-        <p>Av. Rua Wilson Batista N. 34 Conjunto
-Residencial Bandeirantes - Sala 06 - São Paulo/SP</p>
-      </div>
-
-      <div class="info-box">
-        <h3>📞 Telefone</h3>
-        <p>(11) 94125-0440</p>
-      </div>
-
-      <div class="info-box">
-        <h3>✉️ E-mail</h3>
-        <p>contatoastransport@outlook.com</p>
-      </div>
+    <div class="card">
+      <h3>Traslados</h3>
+      <p>Conforto e pontualidade.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 AS Transport • Todos os direitos reservados
-  </footer>
+<section id="contato">
+  <h2 class="section-title">Contato & <span>Localização</span></h2>
 
-  <!-- JS MENU MOBILE -->
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const menu = document.getElementById('menu');
+  <div class="contato-info">
+    <div class="info-box">
+      <h3>Endereço</h3>
+      <p>São Paulo / SP</p>
+    </div>
+    <div class="info-box">
+      <h3>Telefone</h3>
+      <p>(11) 94125-0440</p>
+    </div>
+    <div class="info-box">
+      <h3>E-mail</h3>
+      <p>contatoastransport@outlook.com</p>
+    </div>
+  </div>
 
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-      menuToggle.textContent = menu.classList.contains('active') ? '✕' : '☰';
+  <div class="mapa">
+    <iframe
+      src="https://www.google.com/maps?q=São%20Paulo%20SP&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<footer>
+  © 2025 AS Transport • Todos os direitos reservados
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    menuToggle.textContent = menu.classList.contains('active') ? '✕' : '☰';
+  });
+
+  document.querySelectorAll('#menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('active');
+      menuToggle.textContent = '☰';
     });
-
-    document.querySelectorAll('#menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('active');
-        menuToggle.textContent = '☰';
-      });
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>
