@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>AS Transport | Exelência em Transporte</title>
+  <title>AS Transport | Excelência em Transporte</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonte -->
@@ -21,6 +21,10 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -144,11 +148,30 @@
       transform: translateY(-5px);
     }
 
-    .card h3 {
-      margin-bottom: 15px;
+    .card p {
+      color: var(--cinza);
+      font-size: 15px;
     }
 
-    .card p {
+    /* ================= CONTATO ================= */
+    .contato-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .info-box {
+      background-color: #111;
+      padding: 25px;
+      border-left: 4px solid var(--vermelho);
+    }
+
+    .info-box h3 {
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
       color: var(--cinza);
       font-size: 15px;
     }
@@ -165,7 +188,6 @@
 
     /* ================= RESPONSIVO ================= */
     @media (max-width: 768px) {
-
       header {
         padding: 20px;
       }
@@ -204,10 +226,6 @@
         text-align: center;
       }
 
-      .hero-text h1 {
-        font-size: 36px;
-      }
-
       section {
         padding: 60px 20px;
       }
@@ -219,21 +237,11 @@
 
       .sobre p {
         text-align: center;
-        font-size: 15px;
       }
 
-      .servicos {
+      .servicos,
+      .contato-info {
         grid-template-columns: 1fr;
-      }
-
-      footer {
-        padding: 30px 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-text h1 {
-        font-size: 30px;
       }
     }
   </style>
@@ -247,27 +255,33 @@
     <div class="menu-toggle" id="menuToggle">☰</div>
 
     <nav id="menu">
-      <a href="#">Início</a>
-      <a href="#">Sobre</a>
-      <a href="#">Serviços</a>
-      <a href="#">Contato</a>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="inicio">
     <div class="hero-text">
       <h1>Excelência em <span>Transporte</span></h1>
       <p>
         Soluções profissionais em transporte corporativo, com segurança,
         pontualidade e alto padrão de atendimento.
       </p>
-      <a href="#" class="btn">Solicitar Atendimento</a>
+      <a
+        href="https://wa.me/5511941250440text=Olá!%20Gostaria%20de%20solicitar%20um%20atendimento."
+        class="btn"
+        target="_blank"
+      >
+        Solicitar Atendimento
+      </a>
     </div>
   </section>
 
   <!-- SOBRE -->
-  <section class="sobre">
+  <section class="sobre" id="sobre">
     <h2 class="section-title">Sobre a <span>AS Transport</span></h2>
     <p>
       A AS Transport atua no segmento de transporte executivo e corporativo,
@@ -277,7 +291,7 @@
   </section>
 
   <!-- SERVIÇOS -->
-  <section>
+  <section id="servicos">
     <h2 class="section-title">Nossos <span>Serviços</span></h2>
 
     <div class="servicos">
@@ -285,15 +299,36 @@
         <h3>Transporte Executivo</h3>
         <p>Atendimento premium para empresas e clientes exigentes.</p>
       </div>
-
       <div class="card">
         <h3>Eventos Corporativos</h3>
-        <p>Logística e transporte para eventos, reuniões e convenções.</p>
+        <p>Logística e transporte para eventos e convenções.</p>
       </div>
-
       <div class="card">
         <h3>Traslados</h3>
-        <p>Serviço de traslado com pontualidade e conforto.</p>
+        <p>Pontualidade, conforto e segurança.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <h2 class="section-title">Informações de <span>Contato</span></h2>
+
+    <div class="contato-info">
+      <div class="info-box">
+        <h3>📍 Endereço</h3>
+        <p>Av. Rua Wilson Batista N. 34 Conjunto
+Residencial Bandeirantes - Sala 06 - São Paulo/SP</p>
+      </div>
+
+      <div class="info-box">
+        <h3>📞 Telefone</h3>
+        <p>(11) 94125-0440</p>
+      </div>
+
+      <div class="info-box">
+        <h3>✉️ E-mail</h3>
+        <p>contatoastransport@outlook.com</p>
       </div>
     </div>
   </section>
