@@ -33,6 +33,13 @@
       overflow-x: hidden;
     }
 
+    /* Remove azul de telefone e e-mail */
+    a[href^="tel"],
+    a[href^="mailto"] {
+      color: inherit;
+      text-decoration: none;
+    }
+
     a {
       color: var(--branco);
       text-decoration: none;
@@ -171,6 +178,7 @@
     .info-box p {
       color: var(--cinza);
       font-size: 15px;
+      line-height: 1.6;
     }
 
     /* ================= MAPA ================= */
@@ -275,35 +283,9 @@
     <a
       href="https://wa.me/5511941250440?text=Olá!%20Gostaria%20de%20solicitar%20um%20atendimento."
       class="btn"
-      target="_blank"
-    >
+      target="_blank">
       Solicitar Atendimento
     </a>
-  </div>
-</section>
-
-<section class="sobre" id="sobre">
-  <h2 class="section-title">Sobre a <span>AS Transport</span></h2>
-  <p>
-    Transporte executivo e corporativo com segurança, conforto e pontualidade.
-  </p>
-</section>
-
-<section id="servicos">
-  <h2 class="section-title">Nossos <span>Serviços</span></h2>
-  <div class="servicos">
-    <div class="card">
-      <h3>Transporte Executivo</h3>
-      <p>Atendimento premium.</p>
-    </div>
-    <div class="card">
-      <h3>Eventos Corporativos</h3>
-      <p>Logística especializada.</p>
-    </div>
-    <div class="card">
-      <h3>Traslados</h3>
-      <p>Conforto e pontualidade.</p>
-    </div>
   </div>
 </section>
 
@@ -313,12 +295,18 @@
   <div class="contato-info">
     <div class="info-box">
       <h3>Endereço</h3>
-      <p>São Paulo / SP</p>
+      <p>
+        Rua Wilson Batista, nº 34<br>
+        Conjunto Residencial Bandeirantes – Sala 06<br>
+        São Paulo – SP
+      </p>
     </div>
+
     <div class="info-box">
       <h3>Telefone</h3>
       <p>(11) 94125-0440</p>
     </div>
+
     <div class="info-box">
       <h3>E-mail</h3>
       <p>contatoastransport@outlook.com</p>
@@ -327,9 +315,8 @@
 
   <div class="mapa">
     <iframe
-      src="https://www.google.com/maps?q=São%20Paulo%20SP&output=embed"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      src="https://www.google.com/maps?q=Rua+Wilson+Batista+34+São+Paulo+SP&output=embed"
+      loading="lazy">
     </iframe>
   </div>
 </section>
